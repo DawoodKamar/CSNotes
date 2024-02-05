@@ -1,0 +1,16 @@
+.container:hover {
+    cursor: pointer;
+}
+
+.date{
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.desc {
+    margin-bottom: 15px;
+}
