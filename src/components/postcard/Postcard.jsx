@@ -6,7 +6,7 @@ const Postcard = () => {
     <div className={styles.container}>
       <Link href="/blog/post">
         <div className="top">
-          <h1 className={styles.title}>title</h1>
+          <h1 className={styles.title}>title title title title title</h1>
           <p className={styles.date}>nov, 1,2022</p>
         </div> 
         <div className={styles.bottom}>
