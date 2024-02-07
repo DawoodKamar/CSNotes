@@ -10,21 +10,22 @@ const TopicsList = () => {
               <Link href="/blog?top=databases" className={styles.topic}>
                 Databases
               </Link>
-        </div>        
-        <div className={styles.topics}>
               <Link href="/blog?top=databases" className={styles.topic}>
                 Databases
               </Link>
-        </div>        
-        <div className={styles.topics}>
               <Link href="/blog?top=databases" className={styles.topic}>
                 Databases
               </Link>
-        </div>        
-        <div className={styles.topics}>
               <Link href="/blog?top=databases" className={styles.topic}>
                 Databases
               </Link>
+              <Link href="/blog?top=databases" className={styles.topic}>
+                Databases
+              </Link>
+              <Link href="/blog?top=databases" className={styles.topic}>
+                Databases
+              </Link>
+              
         </div>
     </div>
   )

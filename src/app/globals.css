@@ -2,7 +2,8 @@
     --bg: #fafafa; 
     --text: #161616;
     --comp: #666666;
-    --green: #19903f;
+    --green: #d4f7f0;
+    --greeninner :#1c7f73;
 }
 
 *{
@@ -26,6 +27,8 @@ p {
     --bg: #000000;
     --text: #ffffff;
     --comp: #a0a0a0;
+    --greeninner: #d4f7f0;
+    --green :#1c7f73;
 }
 
 .container {
