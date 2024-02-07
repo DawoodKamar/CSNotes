@@ -1,7 +1,11 @@
-
+.container {
+    margin: 40px 0;
+}
 
 .title {
     margin: 25px 0;
+    color: var(--comp);
+    font-weight: 1400;
 }
 
 .topics{

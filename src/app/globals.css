@@ -4,6 +4,8 @@
     --comp: #666666;
     --green: #d4f7f0;
     --greeninner :#1c7f73;
+    --comp2: #92A790;
+    --comp3: #6C7ECA;
 }
 
 *{
@@ -20,11 +22,12 @@ a {
 }
 
 p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    line-height: 1.7;
 }
 
 .dark {
-    --bg: #000000;
+    --bg: #0e1422;
     --text: #ffffff;
     --comp: #a0a0a0;
     --greeninner: #d4f7f0;
@@ -90,13 +93,13 @@ p {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 6rem;
+    padding: 0 6rem;
   
   }
   
   @media (max-width: 1280px) {
     .main{
-        padding: 3rem;
+        padding:0 3rem;
     }
   }
   
