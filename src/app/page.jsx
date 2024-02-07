@@ -3,6 +3,7 @@ import TopicsList from "@/components/topicsList/TopicsList";
 import styles from "./home.module.css";
 import Postcard from "@/components/postcard/Postcard";
 import PostList from "@/components/postList/PostList";
+import SideMenu from "@/components/sideMenu/SideMenu";
 
 // const getData = async () =>{
 //   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {next:{revalidate:3600}}) 
@@ -32,6 +33,7 @@ const Home = () => {
       <TopicsList />
       <div className={styles.content}>
         <PostList />
+        <SideMenu />
 
 
       </div>

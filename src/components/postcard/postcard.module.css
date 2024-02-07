@@ -3,11 +3,11 @@
 }
 
 .container:hover .title{
-    color: var(--green);
+    color: var(--greeninner);
 }
 
 .container:hover .read{
-    color: var(--green);
+    color: var(--greeninner);
 
 }
 
@@ -33,5 +33,5 @@
 
 .read:hover::after{
     content: " -->";
-    color: var(--green);
+    color: var(--greeninner);
 }

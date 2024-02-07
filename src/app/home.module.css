@@ -5,3 +5,8 @@
   flex-direction: column;
   gap: 30px;
 }
+
+.content {
+  display: flex;
+  gap: 50px;
+}
