@@ -1,7 +1,6 @@
 import Pagination from "../pagination/Pagination";
 import Postcard from "../postcard/Postcard";
 import styles from "./postList.module.css";
-import Link from "next/link";
 
 
 const PostList = () => {

@@ -1,10 +1,14 @@
+import PersonalCard from "../personalCard/PersonalCard";
 import styles from "./sidemenu.module.css";
 
 
 const SideMenu = () => {
   return (
     <div className={styles.container}>
-SideMenu
+      <PersonalCard/>
+      <div className={styles.line}></div>
+
+
     </div>
   )
 }

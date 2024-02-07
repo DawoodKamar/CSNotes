@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    /* border: 2px solid var(--comp2); */
+}
+
+.link {
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    background-color: var(--comp3);
+    color: var(--bg);
+    border-radius: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text {
+    font-weight: 400;
+    text-align: center;
+}

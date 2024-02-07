@@ -4,14 +4,19 @@
     align-items: center;
     justify-content: space-between;
 }
-
+.empty {
+    flex: 1;
+}
 .logo{
     font-size: 3rem;
     font-weight: 200;
+    flex: 1;
 }
+
 
 .line{
     height: 2px;
-    width: 100%;
+    width: 10vw;
+    margin: 0 auto;
     background-color: var(--comp2);
 }
