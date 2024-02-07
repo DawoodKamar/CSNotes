@@ -4,7 +4,7 @@ import styles from "./postcard.module.css"
 const Postcard = ({post}) => {
   return (
     <div className={styles.container}>
-      <Link href="/blog/post">
+      <Link href={`/blog/${post.id}`}>
         <div className="top">
           <h1 className={styles.title}>{post.title}</h1>
           <p className={styles.date}>nov, 1,2022</p>

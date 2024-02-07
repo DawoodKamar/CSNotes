@@ -1,32 +1,44 @@
 
+import TopicsList from "@/components/topicsList/TopicsList";
 import styles from "./home.module.css";
 import Postcard from "@/components/postcard/Postcard";
+import PostList from "@/components/postList/PostList";
 
-const getData = async () =>{
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {next:{revalidate:3600}}) 
-  //it revalidates the data every hour
+// const getData = async () =>{
+//   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {next:{revalidate:3600}}) 
+//   //it revalidates the data every hour
 
-  if (!res.ok){
-    throw new Error ("Something went wrong")
-  }
+//   if (!res.ok){
+//     throw new Error ("Something went wrong")
+//   }
 
-  return res.json()
-}
+//   return res.json()
+// }
 
 
 
-const Home = async () => {
+const Home = () => {
 
-  const posts = await getData()
+  // const posts = await getData()
 
   return (
     <div className={styles.container}>
-      {posts.map((post)=>
+      {/* {posts.map((post)=>
     <div className={styles.post} key={post.id}>
       <Postcard post={post}/>
     </div>
  
-      )}
+      )} */}
+      <TopicsList />
+      <div className={styles.content}>
+        <PostList />
+
+
+      </div>
+
+
+
+
   </div>
 
   )

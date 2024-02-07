@@ -1,10 +1,7 @@
 :root{
-    --bg: #fafafa;
-    --darkbg: #000000;
+    --bg: #fafafa; 
     --text: #161616;
-    --darkbgtext: #ffffff;
     --comp: #666666;
-    --darkbgcomp: #a0a0a0;
     --green: #19903f;
 }
 
@@ -12,13 +9,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    
 }
 
-body{
-    background-color: var(--bg);
-    color: var(--text);
-}
 
 a {
     text-decoration: none;
@@ -27,6 +20,12 @@ a {
 
 p {
     font-size: 1.3rem;
+}
+
+.dark {
+    --bg: #000000;
+    --text: #ffffff;
+    --comp: #a0a0a0;
 }
 
 .container {
@@ -38,6 +37,8 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 
