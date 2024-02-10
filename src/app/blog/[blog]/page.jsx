@@ -10,18 +10,19 @@ import styles from "./blogpage.module.css"
 //   return res.json()
 // }
 
-const BlogPage  = async({params}) => {
-  const {blog} = params;
+const BlogPage  = ({params}) => {
+  // const {blog} = params;
 
-  const post = await getData(blog);
+  // const post = await getData(blog);
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
           <p className={styles.topic}>databases</p>
-          <h1 className={styles.title}>{post.title}</h1> 
+          <h1 className={styles.title}>title</h1> 
           <p className={styles.date}>Nov 3, 2034</p>
       </div>
-      <div className={styles.postDetails}><p>{post.body}</p></div>
+      <div className={styles.postDetails}><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta delectus repellat deleniti, vitae, nobis l
+        abore repudiandae qui deserunt dolores eum dolore cupiditate. Asperiores tenetur impedit officia minima! Asperiores, laudantium quibusdam.</p></div>
 
     </div>
   )
