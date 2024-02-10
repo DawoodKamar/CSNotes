@@ -28,3 +28,9 @@
     margin: 0 auto;
 }
 
+@media screen and (max-width: 1024px) {
+    .title {
+        margin: 0 0 15px 0;
+
+    }
+  }

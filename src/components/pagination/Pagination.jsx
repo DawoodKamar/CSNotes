@@ -1,11 +1,12 @@
 import styles from "./pagination.module.css";
-import Link from "next/link";
+
 
 
 const Pagination = () => {
   return (
     <div className={styles.container}>
-pagination
+        <button className={styles.button}>Previous</button>
+        <button className={styles.button}>Next</button>
     </div>
   )
 }

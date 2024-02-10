@@ -6,17 +6,15 @@
     --greeninner :#1c7f73;
     --comp2: #92A790;
     --comp3: #6C7ECA;
+    --button: #fafafa;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: var(--bg); */
-    
-}
-body{
     background-color: var(--bg);
+    
 }
 
 a {
@@ -36,6 +34,7 @@ p {
     --greeninner: #d4f7f0;
     --green :#1c7f73;
 }
+
 
 .container {
     width: 1366px;

@@ -1,3 +1,14 @@
 .container{
+    display: flex;
+    justify-content: space-around;
+}
 
+.button {
+    width: 100px;
+    border: none;
+    padding: 16px;
+    background-color: var(--comp3);
+    cursor: pointer;
+    border-radius: 50px;
+    color: var(--button);
 }

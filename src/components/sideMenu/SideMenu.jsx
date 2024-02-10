@@ -1,4 +1,5 @@
 import PersonalCard from "../personalCard/PersonalCard";
+import Relevant from "../relevant/Relevant";
 import styles from "./sidemenu.module.css";
 
 
@@ -7,6 +8,7 @@ const SideMenu = () => {
     <div className={styles.container}>
       <PersonalCard/>
       <div className={styles.line}></div>
+      <Relevant />
 
 
     </div>

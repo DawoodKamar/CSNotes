@@ -1,0 +1,26 @@
+ .title:hover{
+    color: var(--comp3);
+    font-weight: 550;
+}
+
+.topic{
+    font-size: 1rem;
+    color: var(--greeninner);
+    text-decoration: underline;
+    width: max-content;
+}
+
+.title {
+    font-weight: 400;
+    color: var(--comp);
+}
+
+@media screen and (max-width: 640px) {
+    .topic{
+        margin: auto;
+    }
+    
+    .title {
+        text-align: center;
+    }
+  }

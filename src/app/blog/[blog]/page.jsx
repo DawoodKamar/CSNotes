@@ -1,14 +1,14 @@
 import styles from "./blogpage.module.css"
 
-const getData = async (blog) => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${blog}`);
+// const getData = async (blog) => {
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${blog}`);
 
-  if (!res.ok){
-    throw new Error ("Something went wrong");
-  }
+//   if (!res.ok){
+//     throw new Error ("Something went wrong");
+//   }
 
-  return res.json()
-}
+//   return res.json()
+// }
 
 const BlogPage  = async({params}) => {
   const {blog} = params;
