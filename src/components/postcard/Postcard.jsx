@@ -4,7 +4,7 @@ import styles from "./postcard.module.css"
 const Postcard = ({post}) => {
   return (
     <div className={styles.container}>
-      <Link href="/blog/123" >
+      <Link href="/123" >
         <div className="top">
           <h1 className={styles.title}>title of the post, sometimes it is long</h1>
           <p className={styles.topic}>Databases</p>

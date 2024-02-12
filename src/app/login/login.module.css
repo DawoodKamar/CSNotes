@@ -1,0 +1,14 @@
+.container{
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 100px; */
+    height: 60vh;
+}
+
+.wrapper{
+    background-color: var(--green);
+    color: var(--greeninner);
+    padding: 150px 200px;
+    border-radius: 20px;
+}

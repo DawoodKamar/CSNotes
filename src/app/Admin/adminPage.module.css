@@ -1,0 +1,58 @@
+.container{
+margin-right: auto;
+}
+
+.editor{
+    display: flex;
+    gap: 25px;
+    min-height: 50vw;
+    flex-direction: column;
+    position: relative;
+}
+
+.disc {
+    width: 100%;
+    max-width: 70vw;
+}
+
+.add {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    left: 46px;
+}
+
+
+.button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--greeninner);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.title {
+    border: none;
+    outline: none;
+    min-width: 60vw;
+    padding: 50px; 
+    font-size: 2rem;
+    color: var(--text);
+}
+
+.publish {
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    padding: 10px 25px;
+    border: none;
+    background-color: var(--comp3);
+    color: var(--button);
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}

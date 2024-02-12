@@ -7,22 +7,22 @@ const TopicsList = () => {
     <div className={styles.container}>
         <h2 className={styles.title}>Topics</h2>
         <div className={styles.topics}>
-              <Link href="/blog?top=databases" className={styles.topic}>
+              <Link href="/topics" className={styles.topic}>
                 Databases
               </Link>
-              <Link href="/blog?top=databases" className={styles.topic}>
+              <Link href="/topics" className={styles.topic}>
                 Databases
               </Link>
-              <Link href="/blog?top=databases" className={styles.topic}>
+              <Link href="/topics" className={styles.topic}>
                 Databases
               </Link>
-              <Link href="/blog?top=databases" className={styles.topic}>
+              <Link href="/topics" className={styles.topic}>
                 Databases
               </Link>
-              <Link href="/blog?top=databases" className={styles.topic}>
+              <Link href="/topics" className={styles.topic}>
                 Databases
               </Link>
-              <Link href="/blog?top=databases" className={styles.topic}>
+              <Link href="/topics" className={styles.topic}>
                 Databases
               </Link>
               

@@ -110,3 +110,21 @@ p {
         padding: 0rem;
     }
   }
+
+  .ql-container {
+    font-size: 1rem !important;
+  }
+
+  .quill > .ql-container > .ql-editor.ql-blank::before{
+    color: var(--text);
+  }
+
+  .ql-toolbar {
+    background-color: var(--green);
+    width: 205px;
+    border-radius: 25px;
+  }
+
+  .ql-formats{
+    background-color: var(--green);
+  }
