@@ -5,11 +5,18 @@ import Styles from "./adminPage.module.css"
 import { useState } from "react"
 import ReactQuill from "react-quill"
 import "react-quill/dist/quill.bubble.css"
+import { signOut, useSession } from "next-auth/react"
+import { useRouter } from "next/navigation";
 
 
 const AdminPage = () => {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState("")
+  const { status } = useSession();  
+  const router = useRouter();
+  if(status ==="unauthenticated"){
+    router.push("/login")
+  }
 
   return ( 
     <div className={Styles.container}>
@@ -31,6 +38,7 @@ const AdminPage = () => {
 
       </div>
       <button className={Styles.publish}>Publish</button>
+      <button className={Styles.logout} onClick={signOut}>Logout</button>
     </div>
   )
 }

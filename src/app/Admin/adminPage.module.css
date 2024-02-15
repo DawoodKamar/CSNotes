@@ -47,10 +47,23 @@ margin-right: auto;
 .publish {
     position: absolute;
     right: 10px;
-    top: 25px;
+    top: 125px;
     padding: 10px 25px;
     border: none;
     background-color: var(--comp3);
+    color: var(--button);
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.logout{
+    position: absolute;
+    right: 12px;
+    top: 175px;
+    padding: 10px 25px;
+    border: none;
+    background-color: var(--comp2);
     color: var(--button);
     font-size: 1rem;
     border-radius: 10px;
