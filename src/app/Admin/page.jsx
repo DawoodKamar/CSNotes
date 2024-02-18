@@ -1,22 +1,33 @@
 "use client"
 
+import dynamic from 'next/dynamic';
 import Image from "next/image"
 import Styles from "./adminPage.module.css"
-import { useState } from "react"
-import ReactQuill from "react-quill"
+import { useEffect, useState } from "react"
 import "react-quill/dist/quill.bubble.css"
 import { signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation";
 
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 const AdminPage = () => {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState("")
   const { status } = useSession();  
   const router = useRouter();
-  if(status ==="unauthenticated"){
-    router.push("/login")
-  }
+
+  useEffect(() => {
+    if (status === 'unauthenticated') {
+      router.push('/login');
+    }
+  }, [status, router]);
+
+    if(status ==="loading"){
+      return (
+        <div className={Styles.loading}>Loading....</div>
+      )
+    }
+
 
   return ( 
     <div className={Styles.container}>
