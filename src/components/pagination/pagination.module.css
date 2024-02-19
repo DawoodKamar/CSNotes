@@ -12,3 +12,8 @@
     border-radius: 50px;
     color: var(--button);
 }
+
+.button:disabled{
+    background-color: var(--comp);
+    cursor: not-allowed;
+}
