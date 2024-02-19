@@ -8,15 +8,15 @@ import SideMenu from "@/components/sideMenu/SideMenu";
 
 
 
-const Home = () => {
+const Home = ({ searchParams }) => {
 
-  // const posts = await getData()
+  const page = parseInt(searchParams.page) || 1;
 
   return (
     <div className={styles.container}>
       <TopicsList />
       <div className={styles.content}>
-        <PostList />
+        <PostList page={page}/>
         <SideMenu />
 
 
