@@ -18,7 +18,7 @@ const TopicsList = async () => {
         <h2 className={styles.title}>Topics</h2>
         <div className={styles.topics}>
               {data?.map((item) =>(
-              <Link href="/topics" className={styles.topic} key={item._id}>
+              <Link href="/topics" className={styles.topic} key={item._id} >
                 {item.title}
               </Link>
               ))}

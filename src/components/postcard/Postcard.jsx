@@ -1,9 +1,9 @@
 import Link from "next/link"
 import styles from "./postcard.module.css"
 
-const Postcard = ({key, item}) => {
+const Postcard = ({id, item}) => {
   return (
-    <div className={styles.container} key={key}>
+    <div className={styles.container} key={id}>
       <Link href="/123" >
         <div className="top">
           <h1 className={styles.title}>{item.title}</h1>

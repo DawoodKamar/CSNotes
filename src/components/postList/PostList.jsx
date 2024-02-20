@@ -2,8 +2,8 @@ import Pagination from "../pagination/Pagination";
 import Postcard from "../postcard/Postcard";
 import styles from "./postList.module.css";
 
-const getData = async (page) =>{
-  const res = await fetch(`http:localhost:3000/api/posts?page=${page}`,{
+const getData = async (page, topic) =>{
+  const res = await fetch(`http:localhost:3000/api/posts?page=${page}&topic=${topic || ""}`,{
     cache: "no-store", //temparory
   })
   if(!res.ok){
@@ -12,10 +12,9 @@ const getData = async (page) =>{
   return res.json()
 }
 
-const PostList = async ({page}) => {
-  const {posts, count} = await getData(page)
+const PostList = async ({page, topic}) => {
+  const {posts, count} = await getData(page, topic)
   const POST_PER_PAGE = 5
-  
   const hasPrev = POST_PER_PAGE * (page-1) >0
   const hasNext = POST_PER_PAGE * (page-1) + POST_PER_PAGE < count
   return (
@@ -23,7 +22,7 @@ const PostList = async ({page}) => {
         <h2 className={styles.title}>Recent Posts</h2>
         <div className={styles.posts}>
           {posts?.map((item) =>(
-            <Postcard item = {item} key={item._id} />
+            <Postcard item = {item} key={item.id} id={item.id} />
           ))}
 
         </div>
