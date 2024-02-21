@@ -3,7 +3,7 @@ import Postcard from "../postcard/Postcard";
 import styles from "./postList.module.css";
 
 const getData = async (page, topic) =>{
-  const res = await fetch(`http:localhost:3000/api/posts?page=${page}&topic=${topic || ""}`,{
+  const res = await fetch(`http://localhost:3000/api/posts?page=${page}&topic=${topic || ""}`,{
     cache: "no-store", //temparory
   })
   if(!res.ok){
