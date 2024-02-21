@@ -21,7 +21,7 @@
     font-size: 1rem;
     margin-bottom: 20px;
     color: var(--greeninner);
-    /* text-decoration: underline; */
+    text-transform: capitalize;
     border-bottom: 1px solid var(--greeninner);
     width: max-content;
 }

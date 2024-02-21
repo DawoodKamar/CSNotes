@@ -7,7 +7,7 @@ const Postcard = ({id, item}) => {
       <Link href="/123" >
         <div className="top">
           <h1 className={styles.title}>{item.title}</h1>
-          <p className={styles.topic}>{item.topic}</p>
+          <p className={styles.topic}>{item.topicSlug}</p>
         </div> 
         <div className={styles.bottom}>
           <p className={styles.desc}>
