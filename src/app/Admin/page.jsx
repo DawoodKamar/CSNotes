@@ -7,15 +7,62 @@ import { useEffect, useState } from "react"
 import "react-quill/dist/quill.bubble.css"
 import { signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
+import { app } from '@/utils/firebase';
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
+// const storage = getStorage(app);
+
 const AdminPage = () => {
-  const [file, setFile] = useState(null)
   const [open, setOpen] = useState(false)
+  const [file, setFile] = useState(null)
+  const [media, setMedia] = useState("")
   const [value, setValue] = useState("")
+  const [title, setTitle] = useState("");
+  const [catSlug, setCatSlug] = useState("");
   const { status } = useSession();  
   const router = useRouter();
+
+  useEffect (()=>{
+    const storage = getStorage(app);
+    const upload = () => {
+      const name = new Date().getTime() + file.name;
+      const storageRef = ref(storage, name);
+
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+          }
+        },
+        (error) => {},
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            setMedia(downloadURL);
+          });
+        }
+      );
+    };
+    file && upload;
+  },[file])
+
 
   useEffect(() => {
     if (status === 'unauthenticated') {
@@ -29,12 +76,33 @@ const AdminPage = () => {
       )
     }
 
+    const slugify = (str) =>{
+      str.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/[\s_-]+/g, "-").replace(/^-+|-+$/g, "");
+    }
 
+    const handleSubmit = async () =>{
+      const res = await fetch("/api/posts",{
+        method: "POST",
+        body: JSON.stringify({
+          title,
+          desc:value,
+          img: media,
+          slug: slugify(title),
+          catSlug: catSlug || "javascript",
+        })
+      })
+      console.log(res)
+    }
 
 
   return ( 
     <div className={Styles.container}>
-      <input type="textarea" placeholder="Title" className={Styles.title}/>  
+      <input type="textarea" placeholder="Title" className={Styles.title} onChange={e=>setTitle(e.target.value)}/>  
+      <select className={Styles.select} onChange={(e) => setCatSlug(e.target.value)}>
+        <option value="java">Java</option>
+        <option value="javascript">Javascript</option>
+        <option value="databases">Databases</option>
+      </select>
       <div className={Styles.editor}>
         <button className={Styles.button} onClick={()=> setOpen(!open)}>
           <Image src="/plus.png" alt="plus sign" width={16} height={16} />
@@ -56,7 +124,7 @@ const AdminPage = () => {
         <ReactQuill className={Styles.disc} theme="bubble" value={value} onChange={setValue} placeholder="Discription" />
 
       </div>
-      <button className={Styles.publish}>Publish</button>
+      <button className={Styles.publish} onClick={handleSubmit}>Publish</button>
       <button className={Styles.logout} onClick={signOut}>Logout</button>
     </div>
   )

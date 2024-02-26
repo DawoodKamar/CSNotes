@@ -35,6 +35,7 @@ export const GET = async (req) => {
 //create post
 export const POST = async (req) => {
   const session = getAuthSession();
+  console.log(session.user);
 
   if (!session) {
     return new NextRequest(
