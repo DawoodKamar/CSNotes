@@ -4,7 +4,7 @@ import styles from "./blogpage.module.css"
 const getData = async (slug) =>{
 
   const res = await fetch(`http://localhost:3000/api/posts/${slug}`,{
-    cache: "no-store", //temparory
+    cache: "no-store", //temporary
   })
   if(!res.ok){
     throw new Error("Could not get post!")
@@ -24,7 +24,7 @@ const BlogPage  = async ({params}) => {
           <p className={styles.topic}>{data.topicSlug}</p>
           <h1 className={styles.title}>{data.title}</h1> 
       </div>
-      <div className={styles.postDetails} dangerouslySetInnerHTML={{__html:data?.desc}}/>
+      <div className={styles.postDetails} dangerouslySetInnerHTML={{__html:data?.desc}}/> {/* find library to display safely can only be tags related to text*/}
       <Quiz />
     </div>
   )

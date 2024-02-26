@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 const AdminPage = () => {
+  const [file, setFile] = useState(null)
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState("")
   const { status } = useSession();  
@@ -29,6 +30,8 @@ const AdminPage = () => {
     }
 
 
+
+
   return ( 
     <div className={Styles.container}>
       <input type="textarea" placeholder="Title" className={Styles.title}/>  
@@ -36,15 +39,20 @@ const AdminPage = () => {
         <button className={Styles.button} onClick={()=> setOpen(!open)}>
           <Image src="/plus.png" alt="plus sign" width={16} height={16} />
         </button>
-        {open && <div className={Styles.add}>
+        {open && (
+        <div className={Styles.add}>
+            <input type='file' id='image' onChange={(e) => setFile(e.target.files[0])} style={{display: "none"}}/>
             <button className={Styles.button}>
-              <Image src="/image.png" alt="plus sign" width={16} height={16} />
-            </button>        <button className={Styles.button}>
+              <label htmlFor='image'>
+                <Image src="/image.png" alt="plus sign" width={16} height={16} />
+              </label>
+            </button>        
+            <button className={Styles.button}>
               <Image src="/external.png" alt="plus sign" width={16} height={16} />
             </button>        <button className={Styles.button}>
               <Image src="/video.png" alt="plus sign" width={16} height={16} />
             </button>
-        </div>}
+        </div>)}
         <ReactQuill className={Styles.disc} theme="bubble" value={value} onChange={setValue} placeholder="Discription" />
 
       </div>

@@ -4,7 +4,7 @@ import styles from "./postList.module.css";
 
 const getData = async (page, topic) =>{
   const res = await fetch(`http://localhost:3000/api/posts?page=${page}&topic=${topic || ""}`,{
-    cache: "no-store", //temparory
+    cache: "no-store", //temporary
   })
   if(!res.ok){
     throw new Error("Could not get posts!")
