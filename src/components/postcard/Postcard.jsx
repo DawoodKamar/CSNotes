@@ -1,8 +1,14 @@
 import Link from "next/link"
 import styles from "./postcard.module.css"
+import createDOMPurify from "dompurify"
+import { JSDOM } from 'jsdom';
 
 
 const Postcard = ({id, item}) => {
+  const window = (new JSDOM('')).window;
+  const DOMPurify = createDOMPurify(window);
+  const cleanHTML = DOMPurify.sanitize(item.desc.substring(0,200))
+
   return (
     <div className={styles.container} key={id}>
       <Link href={`/posts/${item.slug}`} >
@@ -11,9 +17,7 @@ const Postcard = ({id, item}) => {
           <p className={styles.topic}>{item.topicSlug}</p>
         </div> 
         <div className={styles.bottom}>
-          <p className={styles.desc}>
-          {`${item.desc.substring(0,200)}...`}
-          </p>
+          <p className={styles.desc} dangerouslySetInnerHTML={{__html: cleanHTML}} />
         </div>
         <p className={styles.read}>Read more</p>
       </Link>

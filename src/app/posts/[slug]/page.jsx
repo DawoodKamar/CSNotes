@@ -1,5 +1,7 @@
 import Quiz from "@/components/quiz/Quiz"
 import styles from "./blogpage.module.css"
+import createDOMPurify from "dompurify"
+import { JSDOM } from 'jsdom';
 
 const getData = async (slug) =>{
 
@@ -13,10 +15,14 @@ const getData = async (slug) =>{
 }
 
 
+
+
 const BlogPage  = async ({params}) => {
   const { slug } = params
   const data = await getData(slug)
-
+  const window = (new JSDOM('')).window;
+  const DOMPurify = createDOMPurify(window);
+  const cleanHTML = DOMPurify.sanitize(data?.desc)
 
   return (
     <div className={styles.container}>
@@ -24,7 +30,7 @@ const BlogPage  = async ({params}) => {
           <p className={styles.topic}>{data.topicSlug}</p>
           <h1 className={styles.title}>{data.title}</h1> 
       </div>
-      <div className={styles.postDetails} dangerouslySetInnerHTML={{__html:data?.desc}}/> {/* find library to display safely can only be tags related to text*/}
+      <div className={styles.postDetails} dangerouslySetInnerHTML={{__html: cleanHTML}}/> {/* find library to display safely can only be tags related to text*/}
       <Quiz />
     </div>
   )
