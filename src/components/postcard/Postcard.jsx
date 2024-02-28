@@ -1,6 +1,7 @@
 import Link from "next/link"
 import styles from "./postcard.module.css"
 
+
 const Postcard = ({id, item}) => {
   return (
     <div className={styles.container} key={id}>

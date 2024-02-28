@@ -60,7 +60,7 @@ const AdminPage = () => {
         }
       );
     };
-    file && upload;
+    file && upload();
   },[file])
 
 
@@ -77,7 +77,7 @@ const AdminPage = () => {
     }
 
     const slugify = (str) =>{
-      str.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/[\s_-]+/g, "-").replace(/^-+|-+$/g, "");
+      return str.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/[\s_-]+/g, "-").replace(/^-+|-+$/g, "");
     }
 
     const handleSubmit = async () =>{
@@ -88,7 +88,7 @@ const AdminPage = () => {
           desc:value,
           img: media,
           slug: slugify(title),
-          catSlug: catSlug || "javascript",
+          topicSlug: catSlug || "javascript",
         })
       })
       console.log(res)
@@ -98,9 +98,9 @@ const AdminPage = () => {
   return ( 
     <div className={Styles.container}>
       <input type="textarea" placeholder="Title" className={Styles.title} onChange={e=>setTitle(e.target.value)}/>  
-      <select className={Styles.select} onChange={(e) => setCatSlug(e.target.value)}>
-        <option value="java">Java</option>
+      <select className={Styles.select} defaultValue={"javascript"} onChange={(e) => setCatSlug(e.target.value)}>
         <option value="javascript">Javascript</option>
+        <option value="java">Java</option>
         <option value="databases">Databases</option>
       </select>
       <div className={Styles.editor}>

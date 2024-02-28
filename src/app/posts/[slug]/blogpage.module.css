@@ -29,3 +29,21 @@
     }
   }
 
+.error{
+    font-size: 2rem;
+}
+
+.link{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    background-color: var(--green);
+    color: var(--greeninner);
+    border-radius: 50px;
+    margin: 0 auto;
+
+}

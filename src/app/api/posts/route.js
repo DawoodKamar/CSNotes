@@ -14,6 +14,9 @@ export const GET = async (req) => {
     where: {
       ...(topic && { topicSlug: topic }),
     },
+    orderBy: {
+      createdAt: "desc",
+    },
     skip: POSTS_PER_PAGE * (page - 1),
   };
 
@@ -34,8 +37,7 @@ export const GET = async (req) => {
 
 //create post
 export const POST = async (req) => {
-  const session = getAuthSession();
-  console.log(session.user);
+  const session = await getAuthSession();
 
   if (!session) {
     return new NextRequest(
@@ -48,6 +50,7 @@ export const POST = async (req) => {
     const post = await prisma.post.create({
       data: { ...body, userEmail: session.user.email },
     });
+    return new NextResponse(JSON.stringify(post, { status: 200 }));
   } catch (err) {
     console.log(err);
     return new NextResponse(
