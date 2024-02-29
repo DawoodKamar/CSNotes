@@ -6,6 +6,7 @@ export const GET = async (req) => {
   const { searchParams } = new URL(req.url);
   const page = searchParams.get("page");
   const topic = searchParams.get("topic");
+  const pop = searchParams.get("pop");
 
   const POSTS_PER_PAGE = 5;
 
@@ -15,7 +16,7 @@ export const GET = async (req) => {
       ...(topic && { topicSlug: topic }),
     },
     orderBy: {
-      createdAt: "desc",
+      ...(pop ? { views: "desc" } : { createdAt: "desc" }),
     },
     skip: POSTS_PER_PAGE * (page - 1),
   };

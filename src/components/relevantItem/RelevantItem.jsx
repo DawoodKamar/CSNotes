@@ -3,13 +3,13 @@ import Link from "next/link";
 
 
 
-const RelevantItem = () => {
+const RelevantItem = ({id, item}) => {
   return (
     <div className={styles.container}>
         <div className={styles.items}>
-          <Link href="/" className={styles.item}>
-          <p className={styles.topic}>Databases</p>
-          <h3 className={styles.title}>Lorem, ipsum dolor sit amet con adipisicing elit. Quam, enim!</h3>
+          <Link href={`/posts/${item.slug}`} className={styles.item}>
+          <p className={styles.topic}>{item.topicSlug}</p>
+          <h3 className={styles.title}>{item.title}</h3>
         </Link>
       </div>
     </div>
