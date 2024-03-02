@@ -1,4 +1,4 @@
-import Quiz from "@/components/quiz/Quiz"
+
 import styles from "./blogpage.module.css"
 import createDOMPurify from "dompurify"
 import { JSDOM } from 'jsdom';
@@ -50,7 +50,6 @@ const BlogPage = async ({ params }) => {
         <h1 className={styles.title}>{data.title}</h1>
       </div>
       <div className={styles.postDetails} dangerouslySetInnerHTML={{ __html: cleanHTML }} />
-      <Quiz />
     </div>
   );
 };
