@@ -1,0 +1,36 @@
+.container{
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 100px; */
+    height: 60vh;
+}
+
+.wrapper{
+    background-color: var(--green);
+    color: var(--greeninner);
+    padding: 150px 200px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.wrapper h3 {
+    background-color: var(--green);
+}
+
+.google {
+    padding: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #ff5555;
+    color: white;
+}
+
+@media screen and (max-width: 768px){
+    .wrapper{
+        padding: 150px 100px;
+    }
+}

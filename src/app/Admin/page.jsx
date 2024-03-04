@@ -14,6 +14,10 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from '@/utils/firebase';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/utils/auth';
+import sess from '@/utils/users';
+import error from '../error';
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
@@ -28,6 +32,8 @@ const AdminPage = () => {
   const [catSlug, setCatSlug] = useState("");
   const { status } = useSession();  
   const router = useRouter();
+ 
+  // console.log(status)
 
   useEffect (()=>{
     const storage = getStorage(app);
@@ -65,16 +71,24 @@ const AdminPage = () => {
 
 
   useEffect(() => {
-    if (status === 'unauthenticated') {
-      router.push('/login');
-    }
-  }, [status, router]);
+   sess().then(session =>{ 
+      const user = session
+      if (session?.user.role !== 'ADMIN'){
+        
+        router.push('/notadmin');
+        // throw new Error('You need to be an admin!')
+      }
+    })
+  if (status === 'unauthenticated') {
+    router.push('/login');
+  }
+}, [status, router]);
 
-    if(status ==="loading"){
-      return (
-        <div className={Styles.loading}>Loading....</div>
-      )
-    }
+if(status ==="loading"){
+  return (
+    <div className={Styles.loading}>Loading....</div>
+  )
+}
 
     const slugify = (str) =>{
       return str.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/[\s_-]+/g, "-").replace(/^-+|-+$/g, "");
