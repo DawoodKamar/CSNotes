@@ -19,14 +19,18 @@
 
 .wrapper h3 {
     background-color: var(--green);
+    text-align: center;
 }
 
-.google {
+.google, .home {
     padding: 15px;
     border-radius: 15px;
     cursor: pointer;
     background-color: #ff5555;
     color: white;
+}
+.home {
+    background-color: var(--comp3);
 }
 
 @media screen and (max-width: 768px){

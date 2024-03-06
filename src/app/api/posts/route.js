@@ -39,8 +39,8 @@ export const GET = async (req) => {
 //create post
 export const POST = async (req) => {
   const session = await getAuthSession();
-
-  if (!session) {
+  console.log(session);
+  if (!session || session.user.role !== "ADMIN") {
     return new NextRequest(
       JSON.stringify({ message: "Not Admin" }, { status: 401 })
     );
