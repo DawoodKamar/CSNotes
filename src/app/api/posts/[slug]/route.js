@@ -1,7 +1,8 @@
 import prisma from "@/utils/connect";
 import { NextRequest, NextResponse } from "next/server";
 
-//single post fetching
+// Single post fetching using its slug
+// Also increment the post's view count each time its accessed
 
 export const GET = async (req, { params }) => {
   const { slug } = params;
