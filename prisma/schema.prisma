@@ -72,7 +72,7 @@ model Post {
   createdAt DateTime @default(now())
   slug      String   @unique
   title     String
-  img       String?
+  img       String[]
   desc      String
   views     Int      @default(0)
   topicSlug String
