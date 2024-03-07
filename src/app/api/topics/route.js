@@ -1,6 +1,8 @@
 import prisma from "@/utils/connect";
 import { NextRequest, NextResponse } from "next/server";
 
+// Handle fetching the list of topics to display with error handling
+
 export const GET = async () => {
   try {
     const topics = await prisma.topic.findMany();

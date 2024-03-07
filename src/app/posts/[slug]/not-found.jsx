@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 
+// Component to handle if the user enters the wrong URL and provides a link to retun home
+
 const PageNotFound = () => {
   return (
     <div>
