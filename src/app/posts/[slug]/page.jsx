@@ -45,7 +45,8 @@ const BlogPage = async ({ params }) => {
   // Use DOMPurify to check the post and make sure it is clean to set as inner html
   const cleanHTML = DOMPurify.sanitize(decodedContent, {
     ADD_TAGS: ['iframe'],
-    ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'src', 'title', 'width', 'height']
+    ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'src', 'title', 'width', 'height'],
+    FORBID_ATTR: ['style']
   });
 
   return (

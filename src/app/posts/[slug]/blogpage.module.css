@@ -47,6 +47,9 @@
     margin: 0 auto;
 
 }
+.postDetails{
+    background-color: var(--bg);
+}
 
 .postDetails img {
     max-width: 100%;

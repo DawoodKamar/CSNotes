@@ -7,7 +7,7 @@ import { JSDOM } from 'jsdom';
 const Postcard = ({id, item}) => {
   const window = (new JSDOM('')).window;
   const DOMPurify = createDOMPurify(window);
-  const cleanHTML = DOMPurify.sanitize(item.desc.substring(0,200))
+  const cleanHTML = DOMPurify.sanitize(item.desc.substring(0,200), {FORBID_ATTR:['style']})
 
   return (
     <div className={styles.container} key={id}>

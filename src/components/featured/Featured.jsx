@@ -1,7 +1,7 @@
 import styles from "./featured.module.css";
 import Link from "next/link";
 
-
+// Component to handle the featured section of the side bar
 const Featured = () => {
   return (
     <div className={styles.container}>

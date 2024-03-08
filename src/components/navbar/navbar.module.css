@@ -1,4 +1,5 @@
 .container{
+    padding: 0 6rem;
     height: 200px;
     display: flex;
     align-items: center;
@@ -6,6 +7,9 @@
 }
 .empty {
     flex: 1;
+}
+.empty svg > path{
+    stroke: var(--text);
 }
 .logo{
     font-size: 3rem;
@@ -28,5 +32,16 @@
     .container{
         height: 100px;
 
+    }
+  }
+  @media (max-width: 1280px) {
+    .container{
+        padding:0 3rem;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .container{
+        padding: 0rem;
     }
   }
