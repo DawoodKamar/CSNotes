@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+// Prisma ORM configiration
 let prisma;
 if (process.env.NODE_ENV === "production") {
   prisma = new PrismaClient();

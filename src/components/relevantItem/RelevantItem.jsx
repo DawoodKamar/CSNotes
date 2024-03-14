@@ -1,7 +1,7 @@
 import styles from "./relevantItem.module.css";
 import Link from "next/link";
 
-//  C
+//  Component that uses the passed down item prop to display a single post details
 const RelevantItem = ({ id, item }) => {
   return (
     <div className={styles.container}>
