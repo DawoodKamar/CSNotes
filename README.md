@@ -16,6 +16,7 @@ Before you begin, ensure you have the following installed:
 ### Installation
 
 1. **Clone the repository:**
+   In your terminal, type in the following commands:
 
 ```bash
 git clone https://github.com/DawoodKamar/CSNotes.git
@@ -33,12 +34,11 @@ pnpm install
 ```
 
 3. **Set up the environment variables:**
-
-Create a .env file in the root of your project and include the necessary secret keys and variables as specified in the provided PowerPoint.
+   Create a .env file in the root of your project and include the necessary secret keys and variables as specified in the provided PowerPoint.
 
 ### Running the project
 
-To start the development server, run:
+    To start the development server, run:
 
 ```bash
 npm run dev
